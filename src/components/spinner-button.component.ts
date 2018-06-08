@@ -10,8 +10,9 @@ import { ButtonOpts } from './button-options.interface';
       [class.fullWidth]="options.fullWidth"
       [class.mat-raised-button]="options.raised"
       [disabled]="options.active">
-
+        <mat-icon *ngIf='options.icon && !options.active'>{{options.icon}}</mat-icon>
         <span *ngIf="!options.active">{{ options.text }}</span>
+        
         <span *ngIf="options.active">{{ options.spinnerText }}</span>
 
         <mat-spinner class="spinner" 
